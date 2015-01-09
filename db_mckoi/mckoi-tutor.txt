@@ -1,0 +1,19 @@
+
+--create db (cmd)
+java -jar mckoidb.jar -create "admin_user" "aupass00"
+
+--DB start (cmd)
+java -jar mckoidb.jar
+
+--JDBC Query Tool (cmd2)
+java -cp mckoidb.jar com.mckoi.tools.JDBCQueryTool -u "galih" -p "galih"
+
+--create query
+create table suppliers (id varchar(3) not null PRIMARY KEY, Nama varchar(100))
+
+create table products (id varchar(6) not null PRIMARY KEY, Nama varchar(100),idSup varchar(3),harga int)
+
+ALTER TABLE products ADD FOREIGN KEY (idSup) REFERENCES SUPPLIERS(id)
+
+--masukkan datanya
+download di webnya pak Teguh
